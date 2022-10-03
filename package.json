@@ -1,0 +1,32 @@
+{
+  "name": "core-js-issue-1133",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Damien Cassou <damien@cassou.me>",
+  "license": "MIT",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook",
+    "test-storybook:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\"",
+    "storybook": "start-storybook -p 6006"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/test-runner": "^0.7.2",
+    "@storybook/web-components": "^6.5.12",
+    "babel-loader": "^8.2.5",
+    "concurrently": "^7.4.0",
+    "http-server": "^14.1.1",
+    "lit-html": "^2.3.1",
+    "wait-on": "^6.0.1"
+  },
+  "dependencies": {},
+  "resolutions": {
+    "core-js": "3.25.3"
+  }
+}
